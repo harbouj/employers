@@ -36,22 +36,9 @@ class EmployerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
- 
+    { 
         Employer::create(['name'=> request('name'),'fonction'=>request('fonction')]);
         return redirect('/');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\r  $r
-     * @return \Illuminate\Http\Response
-     */
-    public function show(r $r)
-    {
-        //
     }
 
     /**

@@ -1,15 +1,8 @@
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-</head>
-<body>
-
-	<div class="container">
-  <h2>Employee List</h2>
-  <a href="{{route('create')}}">create user</a>
+@section('content')
+  <h2>Employers List</h2>
+  <a href="{{route('create')}}" class="btn btn-primary">create user</a> <br><br>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -27,9 +20,9 @@
       		<td>{{$employee->name}}</td>
       		<td>{{$employee->fonction}}</td>
       			
-      		<td ><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Open Modal</button></td>
+      		<td ><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Read</button></td>
       		<td><a href="{{ route('edit', $employee->id) }}" class="btn btn-primary">update</a></td>	
-      		<td><a href="{{ route('delete', $employee->id) }}" class="btn btn-primary">delete</a></td>	
+      		<td><a href="{{ route('delete', $employee->id) }}" class="btn btn-danger">delete</a></td>	
       			
       		
       	</tr>
@@ -48,7 +41,7 @@
         <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <p>modal content</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -58,8 +51,4 @@
   </div>
 </div>
 </div>
-
-	
-<script type="text/javascript" src="js/app.js"></script>
-</body>
-</html>
+@endsection
